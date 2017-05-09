@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoLazyLoading">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Template Lazy Loading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div ng-controller="DemoCtrl">
+    <h3>List1 display after click<button ng-click="showList1 = !showList1">Show or Hide List 1</button></h3>
+    <ul ng-init="showList1 = false;" lazy-loading="{{ showList1 }}">
+      <li ng-repeat="d in list">
+        <h4>ID: {{ d.id }}</h4>
+        <p>Random: {{ d.random }}</p>
+      </li>
+    </ul>
+    <h3>List2 display after click<button ng-click="showList2 = !showList2">Show or Hide List 2</button></h3>
+    <ul ng-init="showList2 = false;" lazy-loading="{{ showList2 }}">
+      <li ng-repeat="d in list">
+        <h4>ID: {{ d.id }}</h4>
+        <p>Random: {{ d.random }}</p>
+      </li>
+    </ul>
+    <h3>List3 display after click<button ng-click="showList3 = !showList3">Show or Hide List 3</button></h3>
+    <ul ng-init="showList3 = false;" lazy-loading="{{ showList3 }}">
+      <li ng-repeat="d in list">
+        <h4>ID: {{ d.id }}</h4>
+        <p>Random: {{ d.random }}</p>
+      </li>
+    </ul>
+    <h3>List4 display after 1000ms</h3>
+    <ul ng-init="showList4 = false;" lazy-loading="1000">
+      <li ng-repeat="d in list">
+        <h4>ID: {{ d.id }}</h4>
+        <p>Random: {{ d.random }}</p>
+      </li>
+    </ul>
+  </div>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../src/lazyloading.js"></script>
+  <script>
+  angular
+    .module('demoLazyLoading', [
+      'fc.lazyLoading'
+    ]).controller('DemoCtrl', DemoCtrl);
+
+  function DemoCtrl($scope) {
+    $scope.list = [];
+    for(var i = 0; i < 5000; i++) {
+      $scope.list.push({
+        id: i,
+        random: Math.random()
+      });
+    }
+  }
+  </script>
+</body>
+
+</html>

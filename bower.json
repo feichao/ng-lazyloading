@@ -1,0 +1,15 @@
+{
+  "name": "lazyloading",
+  "version": "0.0.1",
+  "authors": [
+    "feichao.imayu.wan@gmail.com"
+  ],
+  "description": "angular template lazy loading",
+  "license": "MIT",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
