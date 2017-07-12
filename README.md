@@ -20,5 +20,5 @@ angular 模板懒加载指令
 
 > 引入 src 目录下的 lazyloading.js 文件
 > 导入 fc.lazyLoading
-> 使用属性指令 lazy-loading，有两种取值：1、毫秒数，表示多少毫秒后加载模板；2、bool 表达式，表示显示或者隐藏模板
+> 使用属性指令 lazy-loading，有两种取值：1、毫秒数，表示多少毫秒后加载模板；2、表达式，true 或者 false 或者 返回 true/false 的函数
 
