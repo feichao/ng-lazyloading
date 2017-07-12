@@ -16,6 +16,9 @@ angular 模板懒加载指令
 
 > angularJS 最新版本
 
+**安装**
+bower install --save ng-lazyloading
+
 **如何使用**
 
 > 引入 src 目录下的 lazyloading.js 文件
